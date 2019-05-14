@@ -81,88 +81,86 @@ namespace GTL
 
             #region LINQ
 
-            int[] scores = new int[] { 97, 92, 82, 60 };
+            //int[] scores = new int[] { 97, 92, 82, 60 };
 
-            IEnumerable<int> scoreQuery = from score in scores where score > 80 select score;
+            //IEnumerable<int> scoreQuery = from score in scores where score > 80 select score;
 
-            foreach (int i in scoreQuery)
-            {
-                Console.Write(i + " ");
-            }
+            //foreach(int i in scoreQuery)
+            //{
+            //    Console.Write(i + " ");
+            //}
 
             #endregion
 
-            Console.ReadKey();
-        }
+            DataSet customerOrders = new DataSet("CustomerOrders");
 
-        public class Person : IComparable
-        {
-            public string FirstName { get; }
-            public string LastName { get; }
-            public string FullName { get; }
-            public DateTime BirthDate { get; }
-            public short Age
+            DataTable customersTable = customerOrders.Tables.Add("Customers");
+            DataTable productsTable = customerOrders.Tables.Add("Products");
+            DataTable ordersTable = customerOrders.Tables.Add("Orders");
+            DataTable orderDetailsTable = customerOrders.Tables.Add("OrderDetails");
+
+            DataColumn pkCustID = customersTable.Columns.Add("CustomerID", typeof(string));
+            customersTable.PrimaryKey = new DataColumn[] { pkCustID };
+
+            DataColumn pkProdID = productsTable.Columns.Add("ProductID", typeof(Int32));
+            productsTable.Columns.Add("ProductName", typeof(string));
+            productsTable.PrimaryKey = new DataColumn[] { pkProdID };
+
+            DataColumn pkOrderID = ordersTable.Columns.Add("OrderID", typeof(Int32));
+            ordersTable.Columns.Add("CompanyName", typeof(string));
+            ordersTable.Columns.Add("CustomerID", typeof(string));
+            ordersTable.Columns.Add("OrderDate", typeof(DateTime));
+            ordersTable.PrimaryKey = new DataColumn[] { pkOrderID };
+
+            DataColumn pkOrderDetails = orderDetailsTable.Columns.Add("OrderID", typeof(Int32));
+            DataColumn fkOrderDetails = orderDetailsTable.Columns.Add("ProductID", typeof(Int32));
+            orderDetailsTable.Columns.Add("OrderQuantity", typeof(Int32));
+            orderDetailsTable.PrimaryKey = new DataColumn[] { pkOrderDetails, fkOrderDetails };
+
+            DataRelation customerOrdersRelation = 
+                customerOrders.Relations.Add("CustOrders",
+                customerOrders.Tables["Customers"].Columns["CustomerID"],
+                customerOrders.Tables["Orders"].Columns["CustomerID"]);
+
+            DataRelation orderDetailRelation =
+                customerOrders.Relations.Add("OrderDetail",
+                customerOrders.Tables["Orders"].Columns["OrderID"],
+                customerOrders.Tables["OrderDetails"].Columns["OrderID"], false);
+
+            DataRelation orderProductRelation =
+                customerOrders.Relations.Add("OrderProducts",
+                customerOrders.Tables["Products"].Columns["ProductID"],
+                customerOrders.Tables["OrderDetails"].Columns["ProductID"]);
+
+            customersTable.Rows.Add("NORTS");
+            productsTable.Rows.Add(1, "Filo Mix");
+            productsTable.Rows.Add(2, "Outback Lager");
+            productsTable.Rows.Add(3, "Raclette Courdavau");
+            ordersTable.Rows.Add(10517, "Acme", "NORTS", new DateTime(1997, 4, 24));
+            ordersTable.Rows.Add(11057, "Acme", "NORTS", new DateTime(1997, 4, 29));
+            orderDetailsTable.Rows.Add(10517, 1, 6);
+            orderDetailsTable.Rows.Add(10517, 3, 4);
+            orderDetailsTable.Rows.Add(10517, 2, 6);
+            orderDetailsTable.Rows.Add(11057, 2, 3);
+
+            foreach (DataRow custRow in customerOrders.Tables["Customers"].Rows)
             {
-                get
+                //Console.WriteLine(custRow["CustomerID"].ToString());
+                Console.WriteLine($"Customer ID: {custRow["CustomerID"]}");
+                foreach (DataRow orderRow in custRow.GetChildRows(customerOrdersRelation))
                 {
-                    DateTime today = DateTime.Now;
-
-                    if (today.Month < BirthDate.Month && today.Day < BirthDate.Day)
-                        today = today.AddYears(-1);
-
-                    return Convert.ToInt16(today.Year - BirthDate.Year);
+                    //Console.WriteLine(orderRow["OrderID"].ToString());
+                    Console.WriteLine($"   Order ID: {orderRow["OrderID"]}");
+                    Console.WriteLine($"   Order Date: {orderRow["OrderDate"]}");
+                    foreach(DataRow detailRow in orderRow.GetChildRows(customerOrders.Relations["OrderDetail"]))
+                    {
+                        Console.WriteLine($"     Product: {detailRow.GetParentRow(orderProductRelation)["ProductName"]}");
+                        Console.WriteLine($"     Quantity: {detailRow["OrderQuantity"]}");
+                    }
                 }
             }
-            public Person(string firstname, string lastname, DateTime birthdate)
-            {
-                FirstName = firstname;
-                LastName = lastname;
-                FullName = String.Format($"{lastname}, {firstname}");
-                BirthDate = birthdate;
-            }
 
-            public override string ToString()
-            {
-                return $"First Name:\t {this.FirstName}\nLast Name:\t {this.LastName}\nAge:\t\t {this.Age}";
-            }
-
-            public int CompareTo(object obj)
-            {
-                return LastName.CompareTo(((Person)obj).LastName);
-            }
-        }
-
-        public class Employee : Person
-        {
-            public string Company { get; }
-            public DateTime EmploymentDate { get; }
-            public double RatePerHour { get; }
-            
-            public Employee(Person person, string company, DateTime employmentdate) : base(person.FirstName, person.LastName, person.BirthDate)
-            {
-                Company = company;
-                EmploymentDate = employmentdate;
-            }
-
-            public override string ToString()
-            {
-                return string.Concat(base.ToString(), $"\nCompany:\t {this.Company}\nEmployee Since:\t {this.EmploymentDate.ToString("MM/dd/yyyy")}");
-            }
-
-        }
-
-        public class Student : Person
-        {
-            private static int _id = 1;
-            public string ID { get; }
-            public Student(string firstname, string lastname, DateTime birthdate) : base(firstname, lastname, birthdate)
-            {
-                ID = string.Format("{0:00000}", _id++);
-            }
-            public override string ToString()
-            {
-                return String.Concat($"Student ID:\t {this.ID}\n", base.ToString());
-            }
+            Console.ReadKey();
         }
     }
 }
