@@ -27,57 +27,68 @@ namespace GTL
             ////FormController controller = new FormController(view, list);
             ////Application.Run(view);
 
-            ArrayList _list = new ArrayList();
-            _list.Add(new Student("Yeji", "Hwang", new DateTime(2000, 5, 26)));
-            _list.Add(new Person("Jisu", "Choi", new DateTime(2000, 7, 21)));
-            _list.Add(new Student("Ryujin", "Shin", new DateTime(2001, 4, 17)));
-            _list.Add(new Person("Chaeryeong", "Lee", new DateTime(2001, 6, 5)));
-            _list.Add(new Person("Yuna", "Shin", new DateTime(2003, 12, 9)));
+            //ArrayList _list = new ArrayList();
+            //_list.Add(new Student("Yeji", "Hwang", new DateTime(2000,5,26)));
+            //_list.Add(new Person("Jisu", "Choi", new DateTime(2000,7,21)));
+            //_list.Add(new Student("Ryujin", "Shin", new DateTime(2001,4,17)));
+            //_list.Add(new Person("Chaeryeong", "Lee", new DateTime(2001, 6, 5)));
+            //_list.Add(new Person("Yuna", "Shin", new DateTime(2003, 12, 9)));
 
-            foreach (Person p in _list)
+            //foreach (Person p in _list)
+            //{
+            //    Console.WriteLine($"{p.ToString()}\n");
+            //}
+
+            //List<Person> _plist = new List<Person>();
+            //_plist.Add(new Employee(new Person("Karl", "Noval", new DateTime(1993, 6, 6)), "Ateneo de Cebu", new DateTime(2019, 4, 22)));
+            //_plist.Add(new Employee(new Person("Lea", "Mijares", new DateTime(1998, 10, 21)), "Ateneo de Cebu", new DateTime(2019, 4, 22)));
+            //_plist.Add(new Person("Donna", "Yue", new DateTime(1990, 1, 30)));
+            //_plist.Add(new Student("Ram", "Alarcon", new DateTime(2003, 12, 5)));
+
+            //foreach (Person p in _plist)
+            //{
+            //    Console.WriteLine($"{p.ToString()}\n");
+            //}
+
+            //Console.WriteLine(_list.IsReadOnly);
+
+            //// initializing a read only arraylist
+            //ArrayList _mlist = ArrayList.ReadOnly(_list);
+
+            //// initializing a read only List (any read only Generic)
+            //ReadOnlyCollection<Person> _xlist = _plist.AsReadOnly();
+
+            //foreach(Person p in _mlist)
+            //{
+            //    if (p is Student)
+            //    {
+            //        try
+            //        {
+            //            _mlist.Remove(p);
+            //        }catch(Exception e)
+            //        {
+            //            Console.WriteLine(e.Message);
+            //        }
+            //    }else
+            //    {
+            //        Console.WriteLine($"{p.ToString()}\n");
+            //    }
+            //}
+
+            //Console.WriteLine($"{_mlist.Count}\n");
+
+            #endregion
+
+            #region LINQ
+
+            int[] scores = new int[] { 97, 92, 82, 60 };
+
+            IEnumerable<int> scoreQuery = from score in scores where score > 80 select score;
+
+            foreach (int i in scoreQuery)
             {
-                Console.WriteLine($"{p.ToString()}\n");
+                Console.Write(i + " ");
             }
-
-            List<Person> _plist = new List<Person>();
-            _plist.Add(new Employee(new Person("Karl", "Noval", new DateTime(1993, 6, 6)), "Ateneo de Cebu", new DateTime(2019, 4, 22)));
-            _plist.Add(new Employee(new Person("Lea", "Mijares", new DateTime(1998, 10, 21)), "Ateneo de Cebu", new DateTime(2019, 4, 22)));
-            _plist.Add(new Person("Donna", "Yue", new DateTime(1990, 1, 30)));
-            _plist.Add(new Student("Ram", "Alarcon", new DateTime(2003, 12, 5)));
-
-            foreach (Person p in _plist)
-            {
-                Console.WriteLine($"{p.ToString()}\n");
-            }
-
-            Console.WriteLine(_list.IsReadOnly);
-
-            // initializing a read only arraylist
-            ArrayList _mlist = ArrayList.ReadOnly(_list);
-
-            // initializing a read only List (any read only Generic)
-            ReadOnlyCollection<Person> _xlist = _plist.AsReadOnly();
-
-            foreach (Person p in _mlist)
-            {
-                if (p is Student)
-                {
-                    try
-                    {
-                        _mlist.Remove(p);
-                    }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine(e.Message);
-                    }
-                }
-                else
-                {
-                    Console.WriteLine($"{p.ToString()}\n");
-                }
-            }
-
-            Console.WriteLine($"{_mlist.Count}\n");
 
             #endregion
 
