@@ -1,31 +1,16 @@
 ﻿using System;
-using System.Collections;
+using System.Data;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Data;
 
-namespace GTL
+namespace study.MDataSet
 {
-    static class Program
+    public class MDataSet
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-        [STAThread]
-        static void Main()
+        public void Main()
         {
-            ////Application.EnableVisualStyles();
-            ////Application.SetCompatibleTextRenderingDefault(false);
-
-            ////FormView view = new FormView();
-            ////IList list = new ArrayList();
-            ////FormController controller = new FormController(view, list);
-            ////Application.Run(view);
-
             DataSet customerOrders = new DataSet("CustomerOrders");
 
             DataTable customersTable = customerOrders.Tables.Add("Customers");
@@ -106,7 +91,7 @@ namespace GTL
             dataRow[0] = "Takoyaki";
             // Uncomment the following line to add a new value.
             // dataRow[0] = "Mochi";
-            Console.WriteLine(string.Format("Food {0}", dataRow[0]));
+            Console.WriteLine(string.Format("\nFood {0}\n", dataRow[0]));
 
             // Compare the proposed version with the current.
             if (dataRow.HasVersion(DataRowVersion.Proposed))

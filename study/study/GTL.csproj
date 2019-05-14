@@ -49,6 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MArrayList\MArrayList.cs" />
+    <Compile Include="MLinq\MLinq.cs" />
+    <Compile Include="MList\MListExercise.cs" />
+    <Compile Include="models\Employee.cs" />
     <Compile Include="FormController.cs" />
     <Compile Include="FormView.cs">
       <SubType>Form</SubType>
@@ -57,8 +61,10 @@
       <DependentUpon>FormView.cs</DependentUpon>
     </Compile>
     <Compile Include="IFormView.cs" />
+    <Compile Include="models\Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="models\Student.cs" />
     <EmbeddedResource Include="FormView.resx">
       <DependentUpon>FormView.cs</DependentUpon>
     </EmbeddedResource>
@@ -84,6 +90,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
