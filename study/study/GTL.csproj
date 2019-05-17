@@ -63,6 +63,7 @@
     </Compile>
     <Compile Include="IFormView.cs" />
     <Compile Include="models\Person.cs" />
+    <Compile Include="MXML\MXml.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="models\Student.cs" />

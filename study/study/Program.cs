@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data;
 using System.Xml.Linq;
 using System.Collections.Generic;
 using System.Xml;
+using System.IO;
 
 namespace GTL
 {
@@ -26,87 +28,60 @@ namespace GTL
             //FormController controller = new FormController(view, list);
             //Application.Run(new RegexFormView());
 
-            XDocument d = new XDocument(
-                new XDeclaration("1.0", "utf-8", "yes")
-                //,new XElement("root",
-                //    new XElement("child", "x"),
-                //    new XElement("child", "x")
-                //    )
-                );
+            FileStream F = new FileStream("test.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
 
-            //d.Add(new XElement("root", 
-            //        new XElement("child", "x"),
-            //        new XElement("child","x")
-            //        )
-            //    );
-
-            //XElement root = new XElement("root");
-
-            //root.Add(new XElement("child", "x"),
-            //        new XElement("child", "x")
-            //        );
-
-            //d.Add(root);
-
-            //XElement root = new XElement("root");
-            //XElement child = new XElement("child", "default");
-            //XElement subchild = new XElement("subchild", "default");
-            //XElement parent = new XElement("parent", subchild);
-
-            //root.Add(child, parent);
-            //child.AddAfterSelf(subchild);
-            //subchild.AddBeforeSelf(new XElement("sibling", subchild));
-            ////i have no idea whats happening
-
-            //d.Add(root);
-
-            //foreach (XElement node in child.Ancestors())
+            //for (int i = 1; i <= 20; i++)
             //{
-            //    Console.WriteLine(node);
+            //    F.WriteByte((byte)i);
             //}
-            //Console.WriteLine();
-            //foreach (XElement node in parent.Descendants())
+            //F.Position = 0;
+            //for (int i = 0; i <= 20; i++)
             //{
-            //    Console.WriteLine(node);
-            //}
-            //Console.WriteLine();
-
-            //IEnumerable<string> xmlLinq = from element in d.Descendants() where element.Name == "child" select element.Value;
-            //Console.WriteLine($"{d}\n");
-
-            //foreach (string s in xmlLinq)
-            //{
-            //    Console.WriteLine(s);
+            //    Console.Write(F.ReadByte() + " ");
             //}
 
-            //Using XmlDocument
-
-            XmlDocument xmlD = new XmlDocument();
-            XmlComment xmlCom = xmlD.CreateComment("This is an XMLDocument using C# XML Document");
-            XmlElement xmlRoot = xmlD.CreateElement("root");
-            XmlElement xmlParent = xmlD.CreateElement("parent");
-            XmlElement xmlChild = xmlD.CreateElement("child");
-
-            xmlD.AppendChild(xmlRoot);
-            xmlRoot.AppendChild(xmlParent);
-            xmlParent.AppendChild(xmlChild);
-            xmlChild.InnerText = "miau";
-            xmlD.AppendChild(xmlCom);
-            //Console.WriteLine($"{xmlD.FirstChild.InnerText}");
-
-            //xmlD.Save("test1.xml");
-
-            XmlDocument xmld = new XmlDocument();
-            xmld.Load("test.xml");
-
-            //using (TextWriter sw = new StreamWriter("output.txt", false, Encoding.UTF8)) //Set encoding
+            //foreach(char c in "the quick brown fox jumps over the lazy dog")
             //{
-            //    xmld.Save(sw);
+            //    F.WriteByte((byte)c);
             //}
+            F.Position = 0;
+            
+            while(F.Position != F.Length)
+            {
+                Console.Write((char)F.ReadByte() + " ");
+            }
 
-            xmlD.Save(Console.Out);
+            F.Close();
+
+            Console.WriteLine();
+            
+            Console.Write("\nWrite something!: ");
+            string myinput = Console.ReadLine();
+
+            using (StreamWriter sw = new StreamWriter("test.txt"))
+            {
+                sw.WriteLine(myinput);
+            }
+            
+            try
+            {
+                using (StreamReader sr = new StreamReader("test.txt"))
+                {
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        Console.WriteLine(line);
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine("Huh? Something wrong happened: ");
+                Console.WriteLine($"\t{exc.Message}");
+            }
 
             Console.ReadKey();
         }
+        
     }
 }
