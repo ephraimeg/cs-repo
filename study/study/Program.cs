@@ -82,13 +82,11 @@ namespace GTL
             //Using XmlDocument
 
             XmlDocument xmlD = new XmlDocument();
-            XmlDeclaration xmlDec = xmlD.CreateXmlDeclaration("1.0", "utf-8", "yes");
             XmlComment xmlCom = xmlD.CreateComment("This is an XMLDocument using C# XML Document");
             XmlElement xmlRoot = xmlD.CreateElement("root");
             XmlElement xmlParent = xmlD.CreateElement("parent");
             XmlElement xmlChild = xmlD.CreateElement("child");
 
-            xmlD.AppendChild(xmlDec);
             xmlD.AppendChild(xmlRoot);
             xmlRoot.AppendChild(xmlParent);
             xmlParent.AppendChild(xmlChild);
@@ -96,7 +94,17 @@ namespace GTL
             xmlD.AppendChild(xmlCom);
             //Console.WriteLine($"{xmlD.FirstChild.InnerText}");
 
-            xmlD.Save("test1.xml");
+            //xmlD.Save("test1.xml");
+
+            XmlDocument xmld = new XmlDocument();
+            xmld.Load("test.xml");
+
+            //using (TextWriter sw = new StreamWriter("output.txt", false, Encoding.UTF8)) //Set encoding
+            //{
+            //    xmld.Save(sw);
+            //}
+
+            xmlD.Save(Console.Out);
 
             Console.ReadKey();
         }
