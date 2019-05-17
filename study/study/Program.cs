@@ -81,22 +81,22 @@ namespace GTL
 
             //Using XmlDocument
 
-            //XmlDocument xmlD = new XmlDocument();
-            //XmlDeclaration xmlDec= xmlD.CreateXmlDeclaration("1.0", "utf-8", "yes");
-            //XmlComment xmlCom = xmlD.CreateComment("This is an XMLDocument using C# XML Document");
-            //XmlElement xmlRoot = xmlD.CreateElement("root");
-            //XmlElement xmlParent = xmlD.CreateElement("parent");
-            //XmlElement xmlChild = xmlD.CreateElement("child");
+            XmlDocument xmlD = new XmlDocument();
+            XmlDeclaration xmlDec = xmlD.CreateXmlDeclaration("1.0", "utf-8", "yes");
+            XmlComment xmlCom = xmlD.CreateComment("This is an XMLDocument using C# XML Document");
+            XmlElement xmlRoot = xmlD.CreateElement("root");
+            XmlElement xmlParent = xmlD.CreateElement("parent");
+            XmlElement xmlChild = xmlD.CreateElement("child");
 
-            //xmlD.AppendChild(xmlDec);
-            //xmlD.AppendChild(xmlRoot);
-            //xmlRoot.AppendChild(xmlParent);
-            //xmlParent.AppendChild(xmlChild);
-            //xmlChild.InnerText = "miau";
-            //xmlD.AppendChild(xmlCom);
-            ////Console.WriteLine($"{xmlD.FirstChild.InnerText}");
+            xmlD.AppendChild(xmlDec);
+            xmlD.AppendChild(xmlRoot);
+            xmlRoot.AppendChild(xmlParent);
+            xmlParent.AppendChild(xmlChild);
+            xmlChild.InnerText = "miau";
+            xmlD.AppendChild(xmlCom);
+            //Console.WriteLine($"{xmlD.FirstChild.InnerText}");
 
-            //xmlD.Save("test1.xml");
+            xmlD.Save("test1.xml");
 
             Console.ReadKey();
         }
