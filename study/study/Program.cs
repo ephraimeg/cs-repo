@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data;
 using System.Xml.Linq;
+using System.Collections.Generic;
+using System.Xml;
 
 namespace GTL
 {
@@ -25,45 +27,76 @@ namespace GTL
             //Application.Run(new RegexFormView());
 
             XDocument d = new XDocument(
-                new XComment("This is a comment."),
-                new XProcessingInstruction("xml-stylesheet",
-                    "href='mystyle.css' title='Compact' type='text/css'"),
-                new XElement("Pubs",
-                    new XElement("Book",
-                        new XElement("Title", "Artifacts of Roman Civilization"),
-                        new XElement("Author", "Moreno, Jordao")
-                    ),
-                    new XElement("Book",
-                        new XElement("Title", "Midieval Tools and Implements"),
-                        new XElement("Author", "Gazit, Inbar")
-                    )
-                ),
-                new XComment("This is another comment.")
-            );
+                new XDeclaration("1.0", "utf-8", "yes")
+                //,new XElement("root",
+                //    new XElement("child", "x"),
+                //    new XElement("child", "x")
+                //    )
+                );
 
-            XNamespace ns = "mynamespace";
-            XNamespace sns = "secondnamespace";
-            XDocument xD = new XDocument(
-                new XComment("This is my first XDocument"),
-                new XComment(new XComment("There can only be one root element, it doesnt have to be called root")),
-                new XElement("root",
-                    new XElement("A", "A content1", new XAttribute("z", "z attribute"),
-                        new XElement("AA", "AA content")),
-                    new XElement("A", new XAttribute("z", true),
-                        new XElement("AB", "AB content")),
-                    new XElement(ns+ "A", new XAttribute("x", "yes"),
-                        new XElement(sns + "AC", 
-                            new XElement("D", "D content"), new XAttribute("y", "not")))
-                )
-            );
+            //d.Add(new XElement("root", 
+            //        new XElement("child", "x"),
+            //        new XElement("child","x")
+            //        )
+            //    );
 
+            //XElement root = new XElement("root");
 
-            d.Declaration = new XDeclaration("1.0", "utf-8", "true");
-            Console.WriteLine(d);
+            //root.Add(new XElement("child", "x"),
+            //        new XElement("child", "x")
+            //        );
 
-            Console.WriteLine($"\n\n{xD}");
+            //d.Add(root);
 
-            d.Save("test.xml");
+            //XElement root = new XElement("root");
+            //XElement child = new XElement("child", "default");
+            //XElement subchild = new XElement("subchild", "default");
+            //XElement parent = new XElement("parent", subchild);
+
+            //root.Add(child, parent);
+            //child.AddAfterSelf(subchild);
+            //subchild.AddBeforeSelf(new XElement("sibling", subchild));
+            ////i have no idea whats happening
+
+            //d.Add(root);
+
+            //foreach (XElement node in child.Ancestors())
+            //{
+            //    Console.WriteLine(node);
+            //}
+            //Console.WriteLine();
+            //foreach (XElement node in parent.Descendants())
+            //{
+            //    Console.WriteLine(node);
+            //}
+            //Console.WriteLine();
+
+            //IEnumerable<string> xmlLinq = from element in d.Descendants() where element.Name == "child" select element.Value;
+            //Console.WriteLine($"{d}\n");
+
+            //foreach (string s in xmlLinq)
+            //{
+            //    Console.WriteLine(s);
+            //}
+
+            //Using XmlDocument
+
+            //XmlDocument xmlD = new XmlDocument();
+            //XmlDeclaration xmlDec= xmlD.CreateXmlDeclaration("1.0", "utf-8", "yes");
+            //XmlComment xmlCom = xmlD.CreateComment("This is an XMLDocument using C# XML Document");
+            //XmlElement xmlRoot = xmlD.CreateElement("root");
+            //XmlElement xmlParent = xmlD.CreateElement("parent");
+            //XmlElement xmlChild = xmlD.CreateElement("child");
+
+            //xmlD.AppendChild(xmlDec);
+            //xmlD.AppendChild(xmlRoot);
+            //xmlRoot.AppendChild(xmlParent);
+            //xmlParent.AppendChild(xmlChild);
+            //xmlChild.InnerText = "miau";
+            //xmlD.AppendChild(xmlCom);
+            ////Console.WriteLine($"{xmlD.FirstChild.InnerText}");
+
+            //xmlD.Save("test1.xml");
 
             Console.ReadKey();
         }
