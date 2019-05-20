@@ -1,0 +1,15 @@
+D:\projects\vs2015\app\SongArchive\SongArchive\bin\Debug\SongArchive.exe.config
+D:\projects\vs2015\app\SongArchive\SongArchive\bin\Debug\SongArchive.exe
+D:\projects\vs2015\app\SongArchive\SongArchive\bin\Debug\SongArchive.pdb
+D:\projects\vs2015\app\SongArchive\SongArchive\obj\Debug\SongArchive.View.DetailArtistView.resources
+D:\projects\vs2015\app\SongArchive\SongArchive\obj\Debug\SongArchive.DetailArtistView.resources
+D:\projects\vs2015\app\SongArchive\SongArchive\obj\Debug\SongArchive.InsertAlbumView.resources
+D:\projects\vs2015\app\SongArchive\SongArchive\obj\Debug\SongArchive.InsertArtistView.resources
+D:\projects\vs2015\app\SongArchive\SongArchive\obj\Debug\SongArchive.InsertSongView.resources
+D:\projects\vs2015\app\SongArchive\SongArchive\obj\Debug\SongArchive.MainForm.resources
+D:\projects\vs2015\app\SongArchive\SongArchive\obj\Debug\SongArchive.NewItemForm.resources
+D:\projects\vs2015\app\SongArchive\SongArchive\obj\Debug\SongArchive.Properties.Resources.resources
+D:\projects\vs2015\app\SongArchive\SongArchive\obj\Debug\SongArchive.csproj.GenerateResource.Cache
+D:\projects\vs2015\app\SongArchive\SongArchive\obj\Debug\SongArchive.exe
+D:\projects\vs2015\app\SongArchive\SongArchive\obj\Debug\SongArchive.pdb
+D:\projects\vs2015\app\SongArchive\SongArchive\obj\Debug\SongArchive.csprojResolveAssemblyReference.cache
