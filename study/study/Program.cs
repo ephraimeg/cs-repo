@@ -44,9 +44,13 @@ namespace GTL
             //{
             //    F.WriteByte((byte)c);
             //}
+
+            // Question: Should I remove CRLF ??
+
             F.Position = 0;
             
-            while(F.Position != F.Length)
+            // avoid reading clrf
+            while(F.Position != F.Length - 2)
             {
                 Console.Write((char)F.ReadByte() + " ");
             }
