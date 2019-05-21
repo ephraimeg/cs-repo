@@ -82,16 +82,16 @@
     <Compile Include="View\InsertSongView.Designer.cs">
       <DependentUpon>InsertSongView.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="View\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="View\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewItemForm.cs">
+    <Compile Include="View\NewItemForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewItemForm.Designer.cs">
+    <Compile Include="View\NewItemForm.Designer.cs">
       <DependentUpon>NewItemForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -114,10 +114,10 @@
     <EmbeddedResource Include="View\InsertSongView.resx">
       <DependentUpon>InsertSongView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="View\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewItemForm.resx">
+    <EmbeddedResource Include="View\NewItemForm.resx">
       <DependentUpon>NewItemForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
