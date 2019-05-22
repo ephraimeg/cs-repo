@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{8BAD1207-D711-4241-B251-4745652950F7}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SongArchive</RootNamespace>
     <AssemblyName>SongArchive</AssemblyName>
@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -50,6 +53,10 @@
     <Compile Include="Models\Album.cs" />
     <Compile Include="Models\Artist.cs" />
     <Compile Include="Models\Song.cs" />
+    <Compile Include="Models\SongAlbums.cs" />
+    <Compile Include="Models\SongArchiveContext.cs" />
+    <Compile Include="Models\SongComposers.cs" />
+    <Compile Include="Models\SongSingers.cs" />
     <Compile Include="View\DetailAlbumView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -61,6 +68,12 @@
     </Compile>
     <Compile Include="View\DetailArtistView.Designer.cs">
       <DependentUpon>DetailArtistView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DetailForm.Designer.cs">
+      <DependentUpon>DetailForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\DetailSongView.cs">
       <SubType>UserControl</SubType>
@@ -105,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\DetailArtistView.resx">
       <DependentUpon>DetailArtistView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DetailForm.resx">
+      <DependentUpon>DetailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\DetailSongView.resx">
       <DependentUpon>DetailSongView.cs</DependentUpon>

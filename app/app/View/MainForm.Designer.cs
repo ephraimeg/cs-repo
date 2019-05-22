@@ -36,33 +36,33 @@
             this.albumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.connectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.dgAlbums = new System.Windows.Forms.DataGridView();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.dgComposers = new System.Windows.Forms.DataGridView();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dgSingers = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbKeyword = new System.Windows.Forms.TextBox();
+            this.cbCategory = new System.Windows.Forms.ComboBox();
+            this.btnGo = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgSongs = new System.Windows.Forms.DataGridView();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dgSingers = new System.Windows.Forms.DataGridView();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.dgComposers = new System.Windows.Forms.DataGridView();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.dgAlbums = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            this.tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgAlbums)).BeginInit();
-            this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgComposers)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgSingers)).BeginInit();
+            this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgSongs)).BeginInit();
-            this.tabControl1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgSingers)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgComposers)).BeginInit();
+            this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgAlbums)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -137,47 +137,19 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(598, 527);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
-            // button2
+            // flowLayoutPanel1
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(488, 19);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(80, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Refresh";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(438, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(44, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "GO";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Song",
-            "Singer",
-            "Composer",
-            "Album"});
-            this.comboBox1.Location = new System.Drawing.Point(324, 19);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(108, 24);
-            this.comboBox1.TabIndex = 2;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(72, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(246, 22);
-            this.textBox1.TabIndex = 1;
+            this.flowLayoutPanel1.Controls.Add(this.label1);
+            this.flowLayoutPanel1.Controls.Add(this.tbKeyword);
+            this.flowLayoutPanel1.Controls.Add(this.cbCategory);
+            this.flowLayoutPanel1.Controls.Add(this.btnGo);
+            this.flowLayoutPanel1.Controls.Add(this.btnRefresh);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(16, 16, 16, 0);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(592, 54);
+            this.flowLayoutPanel1.TabIndex = 3;
             // 
             // label1
             // 
@@ -191,19 +163,124 @@
             this.label1.Text = "Search";
             this.label1.UseCompatibleTextRendering = true;
             // 
-            // flowLayoutPanel1
+            // tbKeyword
             // 
-            this.flowLayoutPanel1.Controls.Add(this.label1);
-            this.flowLayoutPanel1.Controls.Add(this.textBox1);
-            this.flowLayoutPanel1.Controls.Add(this.comboBox1);
-            this.flowLayoutPanel1.Controls.Add(this.button1);
-            this.flowLayoutPanel1.Controls.Add(this.button2);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(16, 16, 16, 0);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(592, 54);
-            this.flowLayoutPanel1.TabIndex = 3;
+            this.tbKeyword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbKeyword.Location = new System.Drawing.Point(72, 19);
+            this.tbKeyword.Name = "tbKeyword";
+            this.tbKeyword.Size = new System.Drawing.Size(246, 22);
+            this.tbKeyword.TabIndex = 1;
+            // 
+            // cbCategory
+            // 
+            this.cbCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCategory.FormattingEnabled = true;
+            this.cbCategory.Items.AddRange(new object[] {
+            "Song",
+            "Singer",
+            "Composer",
+            "Album"});
+            this.cbCategory.Location = new System.Drawing.Point(324, 19);
+            this.cbCategory.Name = "cbCategory";
+            this.cbCategory.Size = new System.Drawing.Size(108, 24);
+            this.cbCategory.TabIndex = 2;
+            // 
+            // btnGo
+            // 
+            this.btnGo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGo.Location = new System.Drawing.Point(438, 19);
+            this.btnGo.Name = "btnGo";
+            this.btnGo.Size = new System.Drawing.Size(44, 23);
+            this.btnGo.TabIndex = 3;
+            this.btnGo.Text = "GO";
+            this.btnGo.UseVisualStyleBackColor = true;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.Location = new System.Drawing.Point(488, 19);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(80, 23);
+            this.btnRefresh.TabIndex = 4;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(3, 63);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(592, 461);
+            this.tabControl1.TabIndex = 4;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.dgSongs);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(584, 435);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Songs";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // dgSongs
+            // 
+            this.dgSongs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgSongs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgSongs.Location = new System.Drawing.Point(3, 3);
+            this.dgSongs.Name = "dgSongs";
+            this.dgSongs.Size = new System.Drawing.Size(578, 429);
+            this.dgSongs.TabIndex = 0;
+            this.dgSongs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgSongs_CellDoubleClick);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.dgSingers);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(584, 435);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Singers";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dgSingers
+            // 
+            this.dgSingers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgSingers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgSingers.Location = new System.Drawing.Point(3, 3);
+            this.dgSingers.Name = "dgSingers";
+            this.dgSingers.Size = new System.Drawing.Size(578, 429);
+            this.dgSingers.TabIndex = 0;
+            this.dgSingers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgSingers_CellContentDoubleClick);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.dgComposers);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(584, 435);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Composers";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // dgComposers
+            // 
+            this.dgComposers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgComposers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgComposers.Location = new System.Drawing.Point(3, 3);
+            this.dgComposers.Name = "dgComposers";
+            this.dgComposers.Size = new System.Drawing.Size(578, 429);
+            this.dgComposers.TabIndex = 0;
+            this.dgComposers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgSingers_CellContentDoubleClick);
             // 
             // tabPage5
             // 
@@ -225,79 +302,7 @@
             this.dgAlbums.Name = "dgAlbums";
             this.dgAlbums.Size = new System.Drawing.Size(578, 429);
             this.dgAlbums.TabIndex = 0;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.dgComposers);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(584, 435);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Composers";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // dgComposers
-            // 
-            this.dgComposers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgComposers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgComposers.Location = new System.Drawing.Point(3, 3);
-            this.dgComposers.Name = "dgComposers";
-            this.dgComposers.Size = new System.Drawing.Size(578, 429);
-            this.dgComposers.TabIndex = 0;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.dgSingers);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(584, 435);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Singers";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // dgSingers
-            // 
-            this.dgSingers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgSingers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgSingers.Location = new System.Drawing.Point(3, 3);
-            this.dgSingers.Name = "dgSingers";
-            this.dgSingers.Size = new System.Drawing.Size(578, 429);
-            this.dgSingers.TabIndex = 0;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.dgSongs);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(584, 435);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Songs";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // dgSongs
-            // 
-            this.dgSongs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgSongs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgSongs.Location = new System.Drawing.Point(3, 3);
-            this.dgSongs.Name = "dgSongs";
-            this.dgSongs.Size = new System.Drawing.Size(578, 429);
-            this.dgSongs.TabIndex = 0;
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(3, 63);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(592, 461);
-            this.tabControl1.TabIndex = 4;
+            this.dgAlbums.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgAlbums_CellContentDoubleClick);
             // 
             // MainForm
             // 
@@ -314,15 +319,15 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
-            this.tabPage5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgAlbums)).EndInit();
-            this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgComposers)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgSingers)).EndInit();
+            this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgSongs)).EndInit();
-            this.tabControl1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgSingers)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgComposers)).EndInit();
+            this.tabPage5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgAlbums)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -340,10 +345,10 @@
         private System.Windows.Forms.ToolStripMenuItem connectToolStripMenuItem;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox tbKeyword;
+        private System.Windows.Forms.ComboBox cbCategory;
+        private System.Windows.Forms.Button btnGo;
+        private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridView dgSongs;
