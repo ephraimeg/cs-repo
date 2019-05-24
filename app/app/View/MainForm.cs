@@ -109,5 +109,7 @@ namespace SongArchive
             string value = dgAlbums.Rows[e.RowIndex].Cells[0].Value.ToString();
             //dForm.Show("album", value);
         }
+
     }
+
 }

@@ -32,8 +32,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tbxTitle = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbSinger = new System.Windows.Forms.ComboBox();
+            this.cbComposer = new System.Windows.Forms.ComboBox();
             this.btnNewSinger = new System.Windows.Forms.Button();
             this.btnNewComposer = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
@@ -73,21 +73,21 @@
             this.tbxTitle.Size = new System.Drawing.Size(180, 20);
             this.tbxTitle.TabIndex = 3;
             // 
-            // comboBox1
+            // cbSinger
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(105, 66);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 4;
+            this.cbSinger.FormattingEnabled = true;
+            this.cbSinger.Location = new System.Drawing.Point(105, 66);
+            this.cbSinger.Name = "cbSinger";
+            this.cbSinger.Size = new System.Drawing.Size(121, 21);
+            this.cbSinger.TabIndex = 4;
             // 
-            // comboBox2
+            // cbComposer
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(105, 102);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 5;
+            this.cbComposer.FormattingEnabled = true;
+            this.cbComposer.Location = new System.Drawing.Point(105, 102);
+            this.cbComposer.Name = "cbComposer";
+            this.cbComposer.Size = new System.Drawing.Size(121, 21);
+            this.cbComposer.TabIndex = 5;
             // 
             // btnNewSinger
             // 
@@ -123,8 +123,8 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnNewComposer);
             this.Controls.Add(this.btnNewSinger);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbComposer);
+            this.Controls.Add(this.cbSinger);
             this.Controls.Add(this.tbxTitle);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -142,8 +142,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbxTitle;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbSinger;
+        private System.Windows.Forms.ComboBox cbComposer;
         private System.Windows.Forms.Button btnNewSinger;
         private System.Windows.Forms.Button btnNewComposer;
         private System.Windows.Forms.Button btnSave;
