@@ -31,10 +31,10 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbAlbumName = new System.Windows.Forms.TextBox();
             this.btnNewSinger = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.lbSongList = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // btnSave
@@ -64,12 +64,12 @@
             this.lblTitle.TabIndex = 24;
             this.lblTitle.Text = "ALBUM";
             // 
-            // textBox3
+            // tbAlbumName
             // 
-            this.textBox3.Location = new System.Drawing.Point(105, 30);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(180, 20);
-            this.textBox3.TabIndex = 25;
+            this.tbAlbumName.Location = new System.Drawing.Point(105, 30);
+            this.tbAlbumName.Name = "tbAlbumName";
+            this.tbAlbumName.Size = new System.Drawing.Size(180, 20);
+            this.tbAlbumName.TabIndex = 25;
             // 
             // btnNewSinger
             // 
@@ -80,31 +80,31 @@
             this.btnNewSinger.Text = "New";
             this.btnNewSinger.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnSearch
             // 
-            this.button2.Location = new System.Drawing.Point(231, 100);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(53, 30);
-            this.button2.TabIndex = 29;
-            this.button2.Text = "Search";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnSearch.Location = new System.Drawing.Point(231, 100);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(53, 30);
+            this.btnSearch.TabIndex = 29;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
             // 
-            // listBox1
+            // lbSongList
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(105, 66);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 69);
-            this.listBox1.TabIndex = 26;
+            this.lbSongList.FormattingEnabled = true;
+            this.lbSongList.Location = new System.Drawing.Point(105, 66);
+            this.lbSongList.Name = "lbSongList";
+            this.lbSongList.Size = new System.Drawing.Size(120, 69);
+            this.lbSongList.TabIndex = 26;
             // 
             // InsertAlbumView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnNewSinger);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.lbSongList);
+            this.Controls.Add(this.tbAlbumName);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label2);
@@ -119,9 +119,9 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tbAlbumName;
         private System.Windows.Forms.Button btnNewSinger;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.ListBox lbSongList;
     }
 }

@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{8BAD1207-D711-4241-B251-4745652950F7}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SongArchive</RootNamespace>
     <AssemblyName>SongArchive</AssemblyName>
@@ -32,9 +32,13 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +50,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Album.cs" />
+    <Compile Include="Models\Artist.cs" />
+    <Compile Include="Models\Song.cs" />
+    <Compile Include="Models\SongAlbums.cs" />
+    <Compile Include="Models\SongArchiveContext.cs" />
+    <Compile Include="Models\SongComposers.cs" />
+    <Compile Include="Models\SongSingers.cs" />
     <Compile Include="View\DetailAlbumView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -57,6 +68,12 @@
     </Compile>
     <Compile Include="View\DetailArtistView.Designer.cs">
       <DependentUpon>DetailArtistView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DetailForm.Designer.cs">
+      <DependentUpon>DetailForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\DetailSongView.cs">
       <SubType>UserControl</SubType>
@@ -82,16 +99,16 @@
     <Compile Include="View\InsertSongView.Designer.cs">
       <DependentUpon>InsertSongView.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="View\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="View\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewItemForm.cs">
+    <Compile Include="View\NewItemForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewItemForm.Designer.cs">
+    <Compile Include="View\NewItemForm.Designer.cs">
       <DependentUpon>NewItemForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -101,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\DetailArtistView.resx">
       <DependentUpon>DetailArtistView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DetailForm.resx">
+      <DependentUpon>DetailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\DetailSongView.resx">
       <DependentUpon>DetailSongView.cs</DependentUpon>
@@ -114,10 +134,10 @@
     <EmbeddedResource Include="View\InsertSongView.resx">
       <DependentUpon>InsertSongView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="View\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewItemForm.resx">
+    <EmbeddedResource Include="View\NewItemForm.resx">
       <DependentUpon>NewItemForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -142,7 +162,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Controller\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

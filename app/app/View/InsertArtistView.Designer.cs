@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.btnSave = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbFirstName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbLastName = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnSave
@@ -43,13 +43,14 @@
             this.btnSave.TabIndex = 17;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // textBox1
+            // tbFirstName
             // 
-            this.textBox1.Location = new System.Drawing.Point(105, 66);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(180, 20);
-            this.textBox1.TabIndex = 12;
+            this.tbFirstName.Location = new System.Drawing.Point(105, 66);
+            this.tbFirstName.Name = "tbFirstName";
+            this.tbFirstName.Size = new System.Drawing.Size(180, 20);
+            this.tbFirstName.TabIndex = 12;
             // 
             // label3
             // 
@@ -69,20 +70,20 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "FIRST NAME";
             // 
-            // textBox2
+            // tbLastName
             // 
-            this.textBox2.Location = new System.Drawing.Point(105, 102);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(180, 20);
-            this.textBox2.TabIndex = 18;
+            this.tbLastName.Location = new System.Drawing.Point(105, 102);
+            this.tbLastName.Name = "tbLastName";
+            this.tbLastName.Size = new System.Drawing.Size(180, 20);
+            this.tbLastName.TabIndex = 18;
             // 
             // InsertArtistView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.tbLastName);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbFirstName);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Name = "InsertArtistView";
@@ -95,9 +96,9 @@
         #endregion
 
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbFirstName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbLastName;
     }
 }

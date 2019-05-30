@@ -28,67 +28,68 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnExport = new System.Windows.Forms.Button();
+            this.tbFirstName = new System.Windows.Forms.TextBox();
+            this.tbArtistId = new System.Windows.Forms.TextBox();
+            this.lbAlbums = new System.Windows.Forms.ListBox();
+            this.lbSongs = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbLastName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button2
+            // btnUpdate
             // 
-            this.button2.Location = new System.Drawing.Point(262, 308);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(119, 50);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "UPDATE";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnUpdate.Location = new System.Drawing.Point(262, 308);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(119, 50);
+            this.btnUpdate.TabIndex = 19;
+            this.btnUpdate.Text = "UPDATE";
+            this.btnUpdate.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnExport
             // 
-            this.button1.Location = new System.Drawing.Point(16, 308);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(232, 50);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "EXPORT TO XML";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnExport.Location = new System.Drawing.Point(16, 308);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(232, 50);
+            this.btnExport.TabIndex = 18;
+            this.btnExport.Text = "EXPORT TO XML";
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
-            // textBox2
+            // tbFirstName
             // 
-            this.textBox2.Location = new System.Drawing.Point(113, 53);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(268, 20);
-            this.textBox2.TabIndex = 17;
+            this.tbFirstName.Location = new System.Drawing.Point(113, 53);
+            this.tbFirstName.Name = "tbFirstName";
+            this.tbFirstName.Size = new System.Drawing.Size(268, 20);
+            this.tbFirstName.TabIndex = 17;
             // 
-            // textBox1
+            // tbArtistId
             // 
-            this.textBox1.Location = new System.Drawing.Point(113, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(268, 20);
-            this.textBox1.TabIndex = 16;
+            this.tbArtistId.Location = new System.Drawing.Point(113, 20);
+            this.tbArtistId.Name = "tbArtistId";
+            this.tbArtistId.Size = new System.Drawing.Size(268, 20);
+            this.tbArtistId.TabIndex = 16;
             // 
-            // listBox2
+            // lbAlbums
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(211, 175);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(170, 95);
-            this.listBox2.TabIndex = 15;
+            this.lbAlbums.FormattingEnabled = true;
+            this.lbAlbums.Location = new System.Drawing.Point(211, 175);
+            this.lbAlbums.Name = "lbAlbums";
+            this.lbAlbums.Size = new System.Drawing.Size(170, 95);
+            this.lbAlbums.TabIndex = 15;
             // 
-            // listBox1
+            // lbSongs
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(19, 175);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(170, 95);
-            this.listBox1.TabIndex = 14;
+            this.lbSongs.FormattingEnabled = true;
+            this.lbSongs.Location = new System.Drawing.Point(19, 175);
+            this.lbSongs.Name = "lbSongs";
+            this.lbSongs.Size = new System.Drawing.Size(170, 95);
+            this.lbSongs.TabIndex = 14;
             // 
             // label4
             // 
@@ -126,12 +127,12 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "ARTIST ID";
             // 
-            // textBox3
+            // tbLastName
             // 
-            this.textBox3.Location = new System.Drawing.Point(113, 86);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(268, 20);
-            this.textBox3.TabIndex = 21;
+            this.tbLastName.Location = new System.Drawing.Point(113, 86);
+            this.tbLastName.Name = "tbLastName";
+            this.tbLastName.Size = new System.Drawing.Size(268, 20);
+            this.tbLastName.TabIndex = 21;
             // 
             // label5
             // 
@@ -146,14 +147,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.tbLastName);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.listBox2);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnExport);
+            this.Controls.Add(this.tbFirstName);
+            this.Controls.Add(this.tbArtistId);
+            this.Controls.Add(this.lbAlbums);
+            this.Controls.Add(this.lbSongs);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -167,17 +168,17 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnExport;
+        private System.Windows.Forms.TextBox tbFirstName;
+        private System.Windows.Forms.TextBox tbArtistId;
+        private System.Windows.Forms.ListBox lbAlbums;
+        private System.Windows.Forms.ListBox lbSongs;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tbLastName;
         private System.Windows.Forms.Label label5;
     }
 }
