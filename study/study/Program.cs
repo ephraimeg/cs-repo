@@ -50,7 +50,7 @@ namespace GTL
             F.Position = 0;
             
             // avoid reading clrf
-            while(F.Position != F.Length - 2)
+            while(F.Position != F.Length)
             {
                 Console.Write((char)F.ReadByte() + " ");
             }
@@ -64,7 +64,7 @@ namespace GTL
 
             using (StreamWriter sw = new StreamWriter("test.txt"))
             {
-                sw.WriteLine(myinput);
+                sw.Write(myinput);
             }
             
             try

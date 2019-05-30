@@ -45,8 +45,8 @@ namespace SongArchive
         {
             modelsDataSet = new DataSet();
             singersDataSet = new DataSet();
-            string connectionString = "";
-            string query = "select * from songs; select * from vw_singers; select * from vw_composers; select * from albums";
+            string connectionString = "Server=virmdesql20\\sql03;database=zzz_for_deletion;uid=oos;pwd=it-oos";
+            string query = "select * from songs; select * from vw_singers; select * from vw_composers; select * from albums; select * from artists";
             string singersq = "select * from vw_songartists";
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -87,6 +87,7 @@ namespace SongArchive
             dgSingers.DataSource = modelsDataSet.Tables[1];
             dgComposers.DataSource = modelsDataSet.Tables[2];
             dgAlbums.DataSource = modelsDataSet.Tables[3];
+            dgArtists.DataSource = modelsDataSet.Tables[4];
         }
 
         private void dgSongs_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
